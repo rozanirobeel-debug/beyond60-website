@@ -16,10 +16,11 @@ import {
 } from '@/lib/site-config'
 import { track } from '@/lib/analytics'
 import { MagneticLink } from './magnetic-link'
-import { ScrollStory } from './scroll-story'
 
 const rise = {
-  hidden: { opacity: 0, y: 24 },
+  // Keep information readable even if reveal effects do not initialize on a
+  // static host such as GitHub Pages.
+  hidden: { opacity: 1, y: 0 },
   visible: { opacity: 1, y: 0 },
 }
 
@@ -57,8 +58,8 @@ export function Experience() {
         >
           <img
             className="hero-bg-photo"
-            src={assetPath('/images/drone/hero-pool-topdown.jpg')}
-            alt="Aerial view of the Beyond60 residence and pool courtyard, Manor, Palghar"
+            src={assetPath('/images/hero-residence.jpg')}
+            alt="Beyond60 senior care residence in Manor, Palghar"
           />
           <div className="hero-bg-overlay" />
         </motion.div>
@@ -122,9 +123,25 @@ export function Experience() {
         <div className="visual-label bottom-right hero-full-label">REAL RESIDENCE / MANOR, PALGHAR</div>
       </section>
 
-      <div id="motion-lab">
-        <ScrollStory />
-      </div>
+      <section className="intro-section shell section" id="about">
+        <div className="intro-grid">
+          <div>
+            <p className="kicker">WHY BEYOND60</p>
+            <h2>Care that families can see, understand and trust.</h2>
+          </div>
+          <div className="intro-copy">
+            <p>
+              Beyond60 is a family-run assisted-living residence near Manor, Palghar. Families can visit the
+              property, meet the care team and choose support according to the resident&apos;s actual needs.
+            </p>
+            <div className="intro-facts" aria-label="Beyond60 at a glance">
+              <span><strong>24/7</strong>On-site supervision</span>
+              <span><strong>3</strong>Clear care levels</span>
+              <span><strong>~60 km</strong>From Borivali</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="signal-strip" aria-label="Beyond60 principles">
         <div className="signal-track">
