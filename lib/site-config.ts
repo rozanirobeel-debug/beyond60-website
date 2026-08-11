@@ -1,3 +1,8 @@
+export function assetPath(path: string) {
+  const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+  return `${base}${path}`
+}
+
 export const siteConfig = {
   brand: 'BEYOND60',
   eyebrow: 'SENIOR ASSISTED LIVING / MANOR, PALGHAR',
@@ -62,8 +67,8 @@ export const contact = {
 }
 
 export const gallery = [
-  { src: '/images/gallery-4.jpg', alt: 'Beyond60 resident smiling at the residence' },
-  { src: '/images/gallery-1.jpg', alt: 'Residents celebrating a birthday at Beyond60' },
-  { src: '/images/gallery-3.jpg', alt: 'Residents and family at a Beyond60 community event' },
-  { src: '/images/about-residence.jpg', alt: 'Beyond60 Seniors Care residence entrance, Manor' },
+  { src: assetPath('/images/gallery-4.jpg'), alt: 'Beyond60 resident smiling at the residence' },
+  { src: assetPath('/images/gallery-1.jpg'), alt: 'Residents celebrating a birthday at Beyond60' },
+  { src: assetPath('/images/gallery-3.jpg'), alt: 'Residents and family at a Beyond60 community event' },
+  { src: assetPath('/images/about-residence.jpg'), alt: 'Beyond60 Seniors Care residence entrance, Manor' },
 ]

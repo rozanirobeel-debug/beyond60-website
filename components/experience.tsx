@@ -4,6 +4,7 @@ import { motion, useReducedMotion, useScroll, useSpring, useTransform } from 'mo
 import { ArrowDownRight, ArrowUpRight, CircleCheck, MapPin, MessageCircle, Phone } from 'lucide-react'
 import {
   admissionSteps,
+  assetPath,
   careCategories,
   contact,
   gallery,
@@ -95,7 +96,7 @@ export function Experience() {
         >
           <div className="visual-label top-left">REAL RESIDENCE / MANOR</div>
           <div className="visual-label bottom-right">PALGHAR, MAHARASHTRA</div>
-          <img className="hero-photo" src="/images/gallery-2.jpg" alt="Beyond60 residents smiling at the residence" />
+          <img className="hero-photo" src={assetPath('/images/gallery-2.jpg')} alt="Beyond60 residents smiling at the residence" />
           <div className="orbit orbit-one" />
           <div className="orbit orbit-two" />
         </motion.div>
