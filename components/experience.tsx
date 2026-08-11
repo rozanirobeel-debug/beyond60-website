@@ -26,29 +26,40 @@ export function Experience() {
   const { scrollYProgress } = useScroll()
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 24, mass: 0.3 })
   const heroCopyY = useTransform(scrollYProgress, [0, 0.16], [0, 110])
-  const heroVisualY = useTransform(scrollYProgress, [0, 0.16], [0, -90])
-  const heroVisualRotate = useTransform(scrollYProgress, [0, 0.16], [0, 4])
+  const heroVisualY = useTransform(scrollYProgress, [0, 0.3], ['0%', '14%'])
 
   return (
     <main>
       <motion.div className="global-progress" style={{ scaleX: progress }} />
-      <nav className="nav shell">
-        <a className="wordmark" href="#top" aria-label="Beyond60 home">
-          <span className="wordmark-dot" />
-          {siteConfig.brand}
-        </a>
-        <div className="nav-meta">
-          <span>Manor, Palghar</span>
-          <span className="live-dot">Admissions open</span>
-        </div>
-        <a className="nav-action" href={siteConfig.ctaHref}>
-          {siteConfig.cta} <Phone size={16} />
-        </a>
-      </nav>
 
-      <section className="hero shell" id="top">
+      <section className="hero-full" id="top">
         <motion.div
-          className="hero-copy"
+          className="hero-bg"
+          style={reduceMotion ? undefined : { y: heroVisualY, scale: 1.06 }}
+          initial={false}
+          animate={{ opacity: 1 }}
+          transition={transition}
+        >
+          <img className="hero-bg-photo" src={assetPath('/images/gallery-2.jpg')} alt="Beyond60 residents smiling at the residence" />
+          <div className="hero-bg-overlay" />
+        </motion.div>
+
+        <nav className="nav shell">
+          <a className="wordmark" href="#top" aria-label="Beyond60 home">
+            <span className="wordmark-dot" />
+            {siteConfig.brand}
+          </a>
+          <div className="nav-meta">
+            <span>Manor, Palghar</span>
+            <span className="live-dot">Admissions open</span>
+          </div>
+          <a className="nav-action" href={siteConfig.ctaHref}>
+            {siteConfig.cta} <Phone size={16} />
+          </a>
+        </nav>
+
+        <motion.div
+          className="hero-copy shell"
           style={reduceMotion ? undefined : { y: heroCopyY }}
           initial={false}
           animate="visible"
@@ -71,7 +82,7 @@ export function Experience() {
             <MagneticLink className="primary-cta" href={siteConfig.ctaHref}>
               {siteConfig.cta} <ArrowDownRight size={19} />
             </MagneticLink>
-            <MagneticLink className="primary-cta inverse" href={siteConfig.secondaryCtaHref}>
+            <MagneticLink className="primary-cta inverse light" href={siteConfig.secondaryCtaHref}>
               {siteConfig.secondaryCta} <MessageCircle size={18} />
             </MagneticLink>
           </motion.div>
@@ -85,21 +96,7 @@ export function Experience() {
           </motion.div>
         </motion.div>
 
-        <motion.div
-          className="hero-visual"
-          style={reduceMotion ? undefined : { y: heroVisualY, rotate: heroVisualRotate }}
-          initial={false}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ ...transition, delay: reduceMotion ? 0 : 0.25 }}
-        >
-          <div className="visual-label top-left">REAL RESIDENCE / MANOR</div>
-          <div className="visual-label bottom-right">PALGHAR, MAHARASHTRA</div>
-          <img className="hero-photo" src={assetPath('/images/gallery-2.jpg')} alt="Beyond60 residents smiling at the residence" />
-          <div className="orbit orbit-one" />
-          <div className="orbit orbit-two" />
-        </motion.div>
-
-        <div className="hero-index">01</div>
+        <div className="visual-label bottom-right hero-full-label">REAL RESIDENCE / MANOR, PALGHAR</div>
       </section>
 
       <div id="motion-lab">
