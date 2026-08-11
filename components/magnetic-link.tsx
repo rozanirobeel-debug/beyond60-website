@@ -7,9 +7,10 @@ type MagneticLinkProps = {
   href: string
   className?: string
   children: ReactNode
+  onClick?: () => void
 }
 
-export function MagneticLink({ href, className = '', children }: MagneticLinkProps) {
+export function MagneticLink({ href, className = '', children, onClick }: MagneticLinkProps) {
   const rawX = useMotionValue(0)
   const rawY = useMotionValue(0)
   const x = useSpring(rawX, { stiffness: 260, damping: 18, mass: 0.3 })
@@ -33,6 +34,7 @@ export function MagneticLink({ href, className = '', children }: MagneticLinkPro
       style={{ x, y }}
       onMouseMove={handleMove}
       onMouseLeave={reset}
+      onClick={onClick}
     >
       <span className="button-fill" />
       <span className="button-content">{children}</span>

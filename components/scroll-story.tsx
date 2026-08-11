@@ -5,6 +5,7 @@ import { ArrowUpRight, HeartHandshake, MousePointer2, ScanLine } from 'lucide-re
 import { useRef } from 'react'
 import { MagneticLink } from './magnetic-link'
 import { siteConfig } from '@/lib/site-config'
+import { track } from '@/lib/analytics'
 
 export function ScrollStory() {
   const storyRef = useRef<HTMLElement>(null)
@@ -57,7 +58,14 @@ export function ScrollStory() {
               <p className="kicker">SEE IT YOURSELF</p>
               <h2>Visit before<br />you decide.</h2>
               <p>Talk to admissions, ask every question, then see the residence in person — no pressure, no rushed sign-up.</p>
-              <MagneticLink href={siteConfig.ctaHref} className="primary-cta story-cta">
+              <MagneticLink
+                href={siteConfig.ctaHref}
+                className="primary-cta story-cta"
+                onClick={() => {
+                  track('call_clicked', { source: 'scroll-story' })
+                  track('qualified_lead_started', { channel: 'call', source: 'scroll-story' })
+                }}
+              >
                 Call admissions <ArrowUpRight size={19} />
               </MagneticLink>
             </div>
