@@ -14,7 +14,6 @@ import {
 } from '@/lib/site-config'
 import { MagneticLink } from './magnetic-link'
 import { ScrollStory } from './scroll-story'
-import { AmbientBackground } from './ambient-background'
 
 const rise = {
   hidden: { opacity: 0, y: 24 },
@@ -32,7 +31,6 @@ export function Experience() {
 
   return (
     <main>
-      <AmbientBackground />
       <motion.div className="global-progress" style={{ scaleX: progress }} />
       <nav className="nav shell">
         <a className="wordmark" href="#top" aria-label="Beyond60 home">
