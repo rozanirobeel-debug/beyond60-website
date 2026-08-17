@@ -26,28 +26,42 @@ export const careCategories = [
   {
     index: '01',
     title: 'Self Independent',
-    detail: 'Full accommodation, food, housekeeping, laundry and use of all amenities for residents who live independently.',
-    status: 'FROM ₹27,000/mo',
+    detail: 'Accommodation, meals, housekeeping, laundry and full use of the community for residents who live independently.',
+    status: 'ASK ADMISSIONS',
+    image: 'shared-room.jpg',
+    imageAlt: 'Shared residential room at Beyond60',
   },
   {
     index: '02',
     title: 'Semi Dependent',
-    detail: 'Everything in Self Independent plus daily monitoring, basic observation and help with medicines.',
-    status: 'FROM ₹32,000/mo',
+    detail: 'Independent living with daily monitoring, basic observation and support with medicines when needed.',
+    status: 'ASK ADMISSIONS',
+    image: 'private-room.jpg',
+    imageAlt: 'Private residential room at Beyond60',
   },
   {
     index: '03',
     title: 'Bedridden / Dementia Care',
-    detail: 'Full-time caretaker assistance — showering, diaper changing, washroom support and feeding, alongside full accommodation.',
-    status: 'FROM ₹37,000/mo',
+    detail: 'Full-time caretaker assistance with personal care, mobility, washroom support and feeding alongside full accommodation.',
+    status: 'ASK ADMISSIONS',
+    image: 'assisted-room.jpg',
+    imageAlt: 'Assisted-care room at Beyond60',
+  },
+  {
+    index: '04',
+    title: 'Whole Apartment Exclusive',
+    detail: 'A complete apartment reserved for one family, with support matched privately to the resident or couple.',
+    status: 'ASK ADMISSIONS',
+    image: 'care-room.jpg',
+    imageAlt: 'Residents in a Beyond60 apartment room',
   },
 ]
 
 export const qualitySignals = [
-  ['Room options', 'Twin, semi-private, executive private'],
-  ['Refundable deposit', '₹50,000'],
-  ['One-time admission fee', '₹5,000'],
-  ['What it includes', 'Toiletries, bedding and linen provided'],
+  ['Room options', 'Shared, private and whole-apartment'],
+  ['Plan guidance', 'Discussed privately with admissions'],
+  ['Care matching', 'Based on the resident’s needs'],
+  ['What it includes', 'Accommodation, meals and daily support'],
 ]
 
 // Mirrors the journey Beyond60's own site already describes: book appointment,

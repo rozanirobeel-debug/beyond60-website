@@ -1,45 +1,29 @@
 'use client'
 
-import { motion, useReducedMotion, useScroll, useSpring, useTransform } from 'motion/react'
-import { ArrowDownRight, ArrowUpRight, CircleCheck, HeartHandshake, MapPin, MessageCircle, Phone, Users } from 'lucide-react'
-import {
-  assetPath,
-  careCategories,
-  careJourney,
-  contact,
-  gallery,
-  qualitySignals,
-  siteConfig,
-  socialProof,
-  trustSection,
-  trustStrip,
-} from '@/lib/site-config'
+import { motion, useReducedMotion, useScroll, useSpring } from 'motion/react'
+import { ArrowDown, ArrowUpRight, MessageCircle, Phone, Star } from 'lucide-react'
+import { assetPath, careCategories, careJourney, contact, siteConfig } from '@/lib/site-config'
 import { track } from '@/lib/analytics'
-import { MagneticLink } from './magnetic-link'
 
-const rise = {
-  // Keep information readable even if reveal effects do not initialize on a
-  // static host such as GitHub Pages.
-  hidden: { opacity: 1, y: 0 },
-  visible: { opacity: 1, y: 0 },
-}
+const reviews = [
+  { quote: 'It is a home away from home and one feels included and cared for.', name: 'Rozina R', rating: '4/5' },
+  { quote: 'The care and treatment was top class and the food was healthy. We could see the happiness on mum’s face.', name: 'Amyn Nayani', rating: '5/5' },
+  { quote: 'You can rest assured your loved one will be taken care of without any second thought.', name: 'Melinda Arora', rating: '5/5' },
+]
+
+const media = (name: string) => assetPath(`/story/${name}`)
 
 export function Experience() {
   const reduceMotion = useReducedMotion()
-  const transition = reduceMotion ? { duration: 0 } : { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }
   const { scrollYProgress } = useScroll()
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 24, mass: 0.3 })
-  const heroCopyY = useTransform(scrollYProgress, [0, 0.16], [0, 110])
-  const heroVisualY = useTransform(scrollYProgress, [0, 0.3], ['0%', '14%'])
 
-  const handleCallClick = () => {
-    track('call_clicked', { source: 'hero' })
-    track('qualified_lead_started', { channel: 'call' })
+  const trackCall = (source: string) => {
+    track('call_clicked', { source })
+    track('qualified_lead_started', { channel: 'call', source })
   }
-  const handleWhatsappClick = (source: string) => {
-    track('qualified_lead_started', { channel: 'whatsapp', source })
-  }
-  const handleVisitClick = (source: string) => {
+
+  const trackVisit = (source: string) => {
     track('visit_booked', { channel: 'whatsapp', source })
     track('qualified_lead_started', { channel: 'visit', source })
   }
@@ -48,310 +32,170 @@ export function Experience() {
     <main>
       <motion.div className="global-progress" style={{ scaleX: progress }} />
 
-      <section className="hero-full" id="top">
-        <motion.div
-          className="hero-bg"
-          style={reduceMotion ? undefined : { y: heroVisualY, scale: 1.06 }}
-          initial={false}
-          animate={{ opacity: 1 }}
-          transition={transition}
-        >
-          <img
-            className="hero-bg-photo"
-            src={assetPath('/images/hero-residence.jpg')}
-            alt="Beyond60 senior care residence in Manor, Palghar"
-          />
-          <div className="hero-bg-overlay" />
-        </motion.div>
+      <nav className="nav shell" aria-label="Main navigation">
+        <a className="wordmark" href="#top"><span className="wordmark-dot" />{siteConfig.brand}</a>
+        <span className="nav-place">Manor, Palghar</span>
+        <a className="nav-action" href={contact.phoneHref} onClick={() => trackCall('header')}>Call admissions <Phone size={15} /></a>
+      </nav>
 
-        <nav className="nav shell">
-          <a className="wordmark" href="#top" aria-label="Beyond60 home">
-            <span className="wordmark-dot" />
-            {siteConfig.brand}
+      <section className="arrival scene" id="top">
+        <img className="scene-media" src={media('gate.jpg')} alt="Beyond60 entrance gate in Manor" />
+        <div className="scene-shade" />
+        <div className="arrival-copy shell">
+          <p className="eyebrow light">Your visit begins here</p>
+          <h1>A warm welcome.<br />Every time.</h1>
+          <p>Come in, meet the people who will know your family by name.</p>
+        </div>
+        <div className="staff-card">
+          <img src={media('staff.jpg')} alt="Beyond60 care team gathered outside the residence" />
+          <span>People first. Care always.</span>
+        </div>
+        <a className="scroll-cue" href="#welcome-home">Step inside <ArrowDown size={17} /></a>
+      </section>
+
+      <section className="hero scene" id="welcome-home">
+        <video
+          className="scene-media"
+          autoPlay={!reduceMotion}
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={media('pool-ambulance-poster.jpg')}
+          aria-label="Beyond60 swimming pool and on-site ambulance"
+        >
+          <source src={media('pool-ambulance.mp4')} type="video/mp4" />
+        </video>
+        <div className="scene-shade hero-shade" />
+        <div className="hero-copy shell">
+          <p className="eyebrow light">Senior living, with reassurance built in</p>
+          <h2>Peace of mind<br />feels like this.</h2>
+          <p>A calm residential community with everyday companionship and support close at hand.</p>
+          <a className="gold-cta" href={contact.visitWhatsappHref} onClick={() => trackVisit('hero')}>
+            Book a visit <ArrowUpRight size={18} />
           </a>
-          <div className="nav-meta">
-            <span>Manor, Palghar</span>
-            <span className="live-dot">Admissions open</span>
-          </div>
-          <a className="nav-action" href={siteConfig.ctaHref} onClick={handleCallClick}>
-            {siteConfig.cta} <Phone size={16} />
-          </a>
-        </nav>
+        </div>
+        <div className="service-rail shell" aria-label="Services at a glance">
+          <span><strong>24/7</strong> On-site supervision</span>
+          <span><strong>Daily</strong> Meals & activities</span>
+          <span><strong>Personal</strong> Care by need</span>
+          <span><strong>Ready</strong> Ambulance support</span>
+        </div>
+      </section>
 
-        <motion.div
-          className="hero-copy shell"
-          style={reduceMotion ? undefined : { y: heroCopyY }}
-          initial={false}
-          animate="visible"
-          transition={{ staggerChildren: reduceMotion ? 0 : 0.12 }}
+      <section className="building scene">
+        <img className="scene-media" src={media('building.jpg')} alt="Main Beyond60 residential building beside the pool" loading="lazy" />
+        <div className="scene-shade soft" />
+        <div className="center-line shell">
+          <p className="eyebrow light">A residence, not an institution</p>
+          <h2>It feels like home.<br /><em>Because it is.</em></h2>
+        </div>
+      </section>
+
+      <section className="activities scene">
+        <video
+          className="scene-media"
+          autoPlay={!reduceMotion}
+          muted
+          loop
+          playsInline
+          preload="none"
+          poster={media('activities-poster.jpg')}
+          aria-label="Residents enjoying outdoor activities at Beyond60"
         >
-          <motion.p className="kicker" variants={rise} transition={transition}>
-            {siteConfig.eyebrow}
-          </motion.p>
-          <h1>
-            {siteConfig.headline.map((line) => (
-              <motion.span key={line} variants={rise} transition={transition}>
-                {line}
-              </motion.span>
-            ))}
-          </h1>
-          <motion.p className="hero-description" variants={rise} transition={transition}>
-            {siteConfig.description}
-          </motion.p>
-          <motion.div className="hero-actions" variants={rise} transition={transition}>
-            <MagneticLink className="primary-cta" href={siteConfig.ctaHref} onClick={handleCallClick}>
-              {siteConfig.cta} <ArrowDownRight size={19} />
-            </MagneticLink>
-            <MagneticLink
-              className="primary-cta inverse light"
-              href={siteConfig.secondaryCtaHref}
-              onClick={() => handleWhatsappClick('hero')}
-            >
-              {siteConfig.secondaryCta} <MessageCircle size={18} />
-            </MagneticLink>
-          </motion.div>
-          <motion.div className="trust-strip" variants={rise} transition={transition}>
-            {trustStrip.map(([label, value]) => (
-              <span key={label}>
-                <strong>{value}</strong>
-                {label}
-              </span>
-            ))}
-          </motion.div>
-        </motion.div>
-
-        <div className="visual-label bottom-right hero-full-label">REAL RESIDENCE / MANOR, PALGHAR</div>
-      </section>
-
-      <section className="intro-section shell section" id="about">
-        <div className="intro-grid">
-          <div>
-            <p className="kicker">WHY BEYOND60</p>
-            <h2>Care that families can see, understand and trust.</h2>
-          </div>
-          <div className="intro-copy">
-            <p>
-              Beyond60 is a family-run assisted-living residence near Manor, Palghar. Families can visit the
-              property, meet the care team and choose support according to the resident&apos;s actual needs.
-            </p>
-            <div className="intro-facts" aria-label="Beyond60 at a glance">
-              <span><strong>24/7</strong>On-site supervision</span>
-              <span><strong>3</strong>Clear care levels</span>
-              <span><strong>~60 km</strong>From Borivali</span>
-            </div>
-          </div>
+          <source src={media('activities.mp4')} type="video/mp4" />
+        </video>
+        <div className="scene-shade activities-shade" />
+        <div className="activities-copy shell">
+          <span className="scene-count">04 / THE DAY OPENS UP</span>
+          <h2>Fresh air.<br />Familiar faces.<br />Something to do.</h2>
+          <p>Morning movement, garden conversations and activities that keep the day connected.</p>
         </div>
       </section>
 
-      <section className="signal-strip" aria-label="Beyond60 principles">
-        <div className="signal-track">
-          <span>FAMILY-LED CARE</span><i />
-          <span>24-HOUR SUPERVISION</span><i />
-          <span>VISIT BEFORE YOU DECIDE</span><i />
-          <span>REAL RESIDENTS, REAL ROUTINES</span><i />
-          <span>SAME-DAY RESPONSE</span><i />
+      <section className="reviews-section" aria-label="Google reviews">
+        <div className="reviews-head shell">
+          <div><p className="eyebrow">What families say</p><h2>Care you can feel<br />in their words.</h2></div>
+          <div className="rating"><strong>4.6</strong><span><Star size={16} fill="currentColor" /> Google rating<br />63 public reviews</span></div>
         </div>
-      </section>
-
-      <section className="social-proof shell section" aria-label="Social proof">
-        <div className="social-proof-grid">
-          <motion.div
-            className="social-proof-copy"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={rise}
-            transition={transition}
-          >
-            <p className="kicker"><Users size={13} style={{ verticalAlign: '-2px', marginRight: 8 }} />{socialProof.kicker}</p>
-            <h2>
-              {socialProof.heading.map((line) => (
-                <span key={line}>{line}<br /></span>
-              ))}
-            </h2>
-            <p>{socialProof.body}</p>
-          </motion.div>
-          <div className="social-proof-images">
-            {socialProof.images.map((image, index) => (
-              <motion.div
-                className="social-proof-image"
-                key={image.src}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.4 }}
-                variants={rise}
-                transition={{ ...transition, delay: reduceMotion ? 0 : index * 0.08 }}
-              >
-                <img src={image.src} alt={image.alt} loading="lazy" />
-              </motion.div>
+        <div className="review-window">
+          <div className="review-track">
+            {[...reviews, ...reviews].map((review, index) => (
+              <blockquote className="review-card" key={`${review.name}-${index}`}>
+                <p>“{review.quote}”</p>
+                <footer>{review.name} <span>· {review.rating} on Google</span></footer>
+              </blockquote>
             ))}
           </div>
         </div>
+        <p className="review-note shell">Verified excerpts from the public Google listing. Spelling lightly corrected only where needed for display.</p>
       </section>
 
-      <section className="modules shell section" id="care">
-        <motion.div
-          className="section-heading"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={rise}
-          transition={transition}
-        >
-          <p className="kicker">CARE CATEGORIES</p>
-          <h2>Three levels of care.<br />One priced clearly.</h2>
-          <p>Choose by the level of support your family member actually needs — not a generic package.</p>
-        </motion.div>
+      <section className="community shell section">
+        <div className="section-intro">
+          <p className="eyebrow">Life between the rooms</p>
+          <h2>The lounge is<br />where the day meets.</h2>
+          <p>TV, games and easy conversation lead the scene. Meals, reading and family conversations are always close by.</p>
+        </div>
+        <div className="community-grid">
+          <figure className="community-lead"><img src={media('lounge.jpg')} alt="Beyond60 lounge with television and seating" loading="lazy" /><figcaption>Lounge · TV · Games</figcaption></figure>
+          <figure><img src={media('dining.jpg')} alt="Beyond60 dining area" loading="lazy" /><figcaption>Dining</figcaption></figure>
+          <figure><img src={media('library.jpg')} alt="Beyond60 library and reading table" loading="lazy" /><figcaption>Library</figcaption></figure>
+          <figure><img src={media('office.jpg')} alt="Beyond60 office" loading="lazy" /><figcaption>Office</figcaption></figure>
+        </div>
+      </section>
 
-        <div className="module-list">
+      <section className="residential-ride" id="care">
+        <div className="ride-intro shell">
+          <p className="eyebrow light">Continue upstairs</p>
+          <h2>One easy ride<br />to your own space.</h2>
+        </div>
+        <div className="ride-frames shell">
+          <figure><img src={media('lobby.jpg')} alt="Beyond60 ground-floor lobby" loading="lazy" /><figcaption><span>01</span> Lobby</figcaption></figure>
+          <figure className="fast-frame"><img src={media('elevator.jpg')} alt="Elevator entrance" loading="lazy" /><figcaption><span>02</span> Elevator</figcaption></figure>
+          <figure><img src={media('floor.jpg')} alt="Residential floor corridor" loading="lazy" /><figcaption><span>03</span> Your floor</figcaption></figure>
+        </div>
+        <div className="doors shell" aria-label="Four residential plan doors">
+          {['Independent', 'Semi-assisted', 'Full care', 'Whole apartment'].map((door, index) => (
+            <div className="door" key={door}><span>0{index + 1}</span><strong>{door}</strong></div>
+          ))}
+        </div>
+        <div className="plan-heading shell">
+          <p className="eyebrow">Multiple residential plans</p>
+          <h2>Choose the space.<br />Match the support.</h2>
+          <p>No prices online. We’ll understand the resident’s needs first, then talk through the right room and care plan.</p>
+        </div>
+        <div className="care-cards shell">
           {careCategories.map((category, index) => (
-            <motion.article
-              className="module-row"
-              key={category.index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.55 }}
-              variants={rise}
-              transition={{ ...transition, delay: reduceMotion ? 0 : index * 0.05 }}
-            >
-              <span className="module-index">{category.index}</span>
-              <div>
+            <article className="care-card" key={category.index}>
+              <img src={media(category.image)} alt={category.imageAlt} loading="lazy" />
+              <div className="care-card-copy">
+                <span>{category.index}</span>
                 <h3>{category.title}</h3>
                 <p>{category.detail}</p>
+                <a href={contact.whatsappHref} onClick={() => trackVisit(`care-${index + 1}`)}>Ask about this plan <MessageCircle size={16} /></a>
               </div>
-              <span className="module-status status-core">{category.status}</span>
-              <ArrowUpRight className="module-arrow" size={24} />
-            </motion.article>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className="trust-section section" aria-label="Why families trust Beyond60">
-        <div className="shell trust-grid">
-          <motion.div
-            className="trust-image"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-            variants={rise}
-            transition={transition}
-          >
-            <img src={trustSection.image.src} alt={trustSection.image.alt} loading="lazy" />
-          </motion.div>
-          <motion.div
-            className="trust-copy"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={rise}
-            transition={transition}
-          >
-            <p className="kicker"><HeartHandshake size={13} style={{ verticalAlign: '-2px', marginRight: 8 }} />{trustSection.kicker}</p>
-            <h2>
-              {trustSection.heading.map((line) => (
-                <span key={line}>{line}<br /></span>
-              ))}
-            </h2>
-            <p>{trustSection.body}</p>
-            <ul className="trust-points">
-              {trustSection.points.map((point) => (
-                <li key={point}><CircleCheck size={16} />{point}</li>
-              ))}
-            </ul>
-          </motion.div>
+      <section className="admission shell section" id="admission">
+        <p className="eyebrow">A considered decision</p>
+        <h2>Visit first.<br />Decide together.</h2>
+        <div className="journey">
+          {careJourney.map((step, index) => <div key={step.title}><span>0{index + 1}</span><h3>{step.title}</h3><p>{step.detail}</p></div>)}
+        </div>
+        <div className="admission-actions">
+          <a className="gold-cta dark" href={contact.visitWhatsappHref} onClick={() => trackVisit('admission')}>Book a visit <ArrowUpRight size={18} /></a>
+          <a className="text-link" href={contact.phoneHref} onClick={() => trackCall('admission')}>Or call {contact.phone}</a>
         </div>
       </section>
 
-      <section className="gallery shell section" id="gallery" aria-label="Residence photos">
-        <motion.div
-          className="section-heading"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={rise}
-          transition={transition}
-        >
-          <p className="kicker">THE RESIDENCE</p>
-          <h2>See it, before you visit it.</h2>
-          <p>Real photos of the residence — the same ones you can verify in person on a visit.</p>
-        </motion.div>
-        <div className="gallery-grid">
-          {gallery.map((image, index) => (
-            <motion.div
-              className="gallery-item"
-              key={image.src}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.4 }}
-              variants={rise}
-              transition={{ ...transition, delay: reduceMotion ? 0 : index * 0.06 }}
-            >
-              <img src={image.src} alt={image.alt} loading="lazy" />
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      <section className="principles section">
-        <div className="shell principles-grid">
-          <div className="manifesto">
-            <p className="kicker">WHAT'S INCLUDED</p>
-            <h2>No surprise costs.</h2>
-            <p>
-              Every package covers food, accommodation, housekeeping, laundry and use of amenities. Higher care levels add monitoring, medicine support and caretaker assistance — priced by room type, not hidden fees.
-            </p>
-          </div>
-          <div className="quality-card">
-            <div className="quality-head">
-              <span>PACKAGE DETAILS</span>
-              <CircleCheck size={20} />
-            </div>
-            {qualitySignals.map(([label, value]) => (
-              <div className="quality-row" key={label}>
-                <span>{label}</span>
-                <strong>{value}</strong>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="deploy shell section" id="admission">
-        <div className="deploy-icon"><MapPin size={32} /></div>
-        <p className="kicker">HOW IT WORKS</p>
-        <h2>Appointment → Counselling → Follow-up</h2>
-        <p>
-          No pressure, no rushed decisions. Every family sees the residence in person and talks it through before choosing a care package.
-        </p>
-        <div className="deploy-steps">
-          {careJourney.map((step, index) => (
-            <div key={step.title}><span>0{index + 1}</span><strong>{step.title}</strong><p>{step.detail}</p></div>
-          ))}
-        </div>
-        <div className="hero-actions" style={{ justifyContent: 'center' }}>
-          <MagneticLink className="primary-cta" href={siteConfig.ctaHref} onClick={handleCallClick}>
-            Call admissions <Phone size={18} />
-          </MagneticLink>
-          <MagneticLink
-            className="primary-cta inverse"
-            href={contact.visitWhatsappHref}
-            onClick={() => handleVisitClick('admission-section')}
-          >
-            Book a visit <MessageCircle size={18} />
-          </MagneticLink>
-        </div>
-      </section>
-
-      <footer className="footer shell contact-footer" id="contact">
-        <div>
-          <span className="wordmark"><span className="wordmark-dot" />{siteConfig.brand}</span>
-          <p>{contact.address}</p>
-        </div>
-        <div className="footer-contact">
-          <a href={contact.phoneHref} onClick={handleCallClick}>{contact.phone}</a>
-          <a href={`mailto:${contact.email}`}>{contact.email}</a>
-        </div>
-        <span>PROTOTYPE — NOT LIVE © 2026</span>
+      <footer className="footer shell">
+        <div><span className="wordmark"><span className="wordmark-dot" />{siteConfig.brand}</span><p>{contact.address}</p></div>
+        <div><a href={contact.phoneHref}>{contact.phone}</a><a href={`mailto:${contact.email}`}>{contact.email}</a></div>
+        <span>FIRST-DRAFT PROTOTYPE · NOT LIVE</span>
       </footer>
     </main>
   )
