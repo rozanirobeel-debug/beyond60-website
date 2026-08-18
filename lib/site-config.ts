@@ -8,7 +8,7 @@ export const siteConfig = {
   eyebrow: 'SENIOR ASSISTED LIVING / MANOR, PALGHAR',
   headline: ['Peace of mind,', 'for your family.'],
   description:
-    'A serene, family-run senior care residence near Manor, Palghar — 24-hour care, real supervision and a calm daily routine, around 60 km from Borivali.',
+    'A serene senior living residence near Manor, Palghar, with thoughtful support and a calm daily routine.',
   cta: 'Call admissions',
   ctaHref: 'tel:+919519595655',
   secondaryCta: 'Message on WhatsApp',
@@ -17,43 +17,35 @@ export const siteConfig = {
 }
 
 export const trustStrip = [
-  ['Care model', '24-hour supervision'],
-  ['Location', '~60 km from Borivali'],
-  ['Care levels', '3 categories'],
+  ['Setting', 'Calm and residential'],
+  ['Community', 'Meals, activities and companionship'],
+  ['Support', 'Discussed around each resident'],
 ]
 
-export const careCategories = [
+export const roomOptions = [
   {
-    index: '01',
-    title: 'Self Independent',
-    detail: 'Accommodation, meals, housekeeping, laundry and full use of the community for residents who live independently.',
-    status: 'ASK ADMISSIONS',
-    image: 'shared-room.jpg',
-    imageAlt: 'Shared residential room at Beyond60',
+    title: 'Twin Sharing',
+    detail: 'A shared living space with an unrelated roommate, offering everyday companionship and the most accessible room format.',
+    image: 'twin-sharing.jpg',
+    imageAlt: 'Twin-sharing room with two beds at Beyond60',
   },
   {
-    index: '02',
-    title: 'Semi Dependent',
-    detail: 'Independent living with daily monitoring, basic observation and support with medicines when needed.',
-    status: 'ASK ADMISSIONS',
-    image: 'private-room.jpg',
-    imageAlt: 'Private residential room at Beyond60',
+    title: 'Semi-Private',
+    detail: 'A small private room for residents who value their own quiet space within the wider community.',
+    image: 'semi-private.jpg',
+    imageAlt: 'Small private room at Beyond60',
   },
   {
-    index: '03',
-    title: 'Bedridden / Dementia Care',
-    detail: 'Full-time caretaker assistance with personal care, mobility, washroom support and feeding alongside full accommodation.',
-    status: 'ASK ADMISSIONS',
-    image: 'assisted-room.jpg',
-    imageAlt: 'Assisted-care room at Beyond60',
+    title: 'Executive / Private',
+    detail: 'A master bedroom with an ensuite, offering more personal space and privacy.',
+    image: 'executive-private.jpg',
+    imageAlt: 'Executive private room at Beyond60',
   },
   {
-    index: '04',
-    title: 'Whole Apartment Exclusive',
-    detail: 'A complete apartment reserved for one family, with support matched privately to the resident or couple.',
-    status: 'ASK ADMISSIONS',
-    image: 'care-room.jpg',
-    imageAlt: 'Residents in a Beyond60 apartment room',
+    title: 'Whole-Apartment-Exclusive',
+    detail: 'The complete apartment reserved for one resident, a couple or one family’s private use.',
+    image: 'whole-apartment.jpg',
+    imageAlt: 'Living and dining area within a Beyond60 apartment',
   },
 ]
 
@@ -69,7 +61,7 @@ export const qualitySignals = [
 export const careJourney = [
   {
     title: 'Call or WhatsApp',
-    detail: 'Speak directly with the admissions team about your family’s situation and the care level needed.',
+    detail: 'Speak directly with the admissions team about your family’s situation, preferred room privacy and daily support needs.',
   },
   {
     title: 'Book an appointment',
