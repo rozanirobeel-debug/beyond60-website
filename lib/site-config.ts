@@ -44,8 +44,8 @@ export const roomOptions = [
   {
     title: 'Whole-Apartment-Exclusive',
     detail: 'The complete apartment reserved for one resident, a couple or one family’s private use.',
-    image: 'whole-apartment.jpg',
-    imageAlt: 'Living and dining area within a Beyond60 apartment',
+    image: '',
+    imageAlt: '',
   },
 ]
 

@@ -156,8 +156,8 @@ export function Experience() {
       <section className="hero-section" id="top" aria-labelledby="hero-heading">
         <img
           className="hero-image"
-          src={assetPath('/images/drone/aerial-approach.jpg')}
-          alt="Drone view of the Beyond60 residence and its green surroundings near Manor"
+          src={assetPath('/images/sectioned/hero-senior-portrait.jpg')}
+          alt="Smiling senior resident at Beyond60, wrapped in a white dupatta with festival colour on her cheek"
         />
         <div className="hero-wash" />
         <div className="hero-content shell">
@@ -249,8 +249,8 @@ export function Experience() {
         </div>
         <div className="room-grid">
           {roomOptions.map((room, index) => (
-            <article className="room-card" key={room.title} data-reveal>
-              <img src={sectionImage(room.image)} alt={room.imageAlt} loading="lazy" />
+            <article className={`room-card${room.image ? '' : ' no-image'}`} key={room.title} data-reveal>
+              {room.image && <img src={sectionImage(room.image)} alt={room.imageAlt} loading="lazy" />}
               <div className="room-copy">
                 <span>0{index + 1}</span>
                 <h3>{room.title}</h3>
