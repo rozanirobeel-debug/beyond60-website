@@ -1,8 +1,9 @@
-:HL["/beyond60-website/_next/static/css/f61e19d77bdec23e.css","style"]
+:HL["/beyond60-website/_next/static/css/b6e3d7b319db0518.css","style"]
 :HL["/beyond60-website/images/gallery-full/gate.jpg","image"]
 :HL["/beyond60-website/images/drone/complex-full-aerial.jpg","image"]
 :HL["/beyond60-website/images/gallery-full/office.jpg","image"]
 :HL["/beyond60-website/images/amenities/dining.jpg","image"]
 :HL["/beyond60-website/images/amenities/library.jpg","image"]
 :HL["/beyond60-website/images/amenities/entertainment.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"gallery","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"xHRkLIqBnyFXYtYx9x_X1"}
+:HL["/beyond60-website/images/logo.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"gallery","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"nqzPOfuguxZ928jNKF_Ll"}
