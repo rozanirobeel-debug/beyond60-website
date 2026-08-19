@@ -1,2 +1,2 @@
-:HL["/beyond60-website/_next/static/css/ed67e33511aa9ffc.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"fi4SH2eCnm3jajgaGzc1l"}
+:HL["/beyond60-website/_next/static/css/73d2e72f002642d2.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"DTdKIMQtRS8Ovk9rJFxbw"}
