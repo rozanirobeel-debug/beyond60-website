@@ -45,7 +45,7 @@ export const hero = {
 export const location = {
   eyebrow: 'Peace of mind, simply stated',
   line: 'A calm, residential setting — with an on-call ambulance and trained staff, always within reach.',
-  video: assetPath('/videos/drone-location-to-pool.mp4'),
+  video: assetPath('/videos/drone-location-to-pool-hd.mp4'),
   poster: assetPath('/videos/drone-location-to-pool-poster.jpg'),
   finalFrame: assetPath('/videos/drone-location-to-pool-final.jpg'),
   posterAlt: 'Aerial approach over the Beyond60 property, descending toward the courtyard pool',
@@ -71,7 +71,7 @@ export const specializedCare = {
 
 // Section 4.5 — scenic transition (scroll-scrubbed drone rise, continues seamlessly from the location descent's final frame)
 export const scenic = {
-  video: assetPath('/videos/drone-pool-to-overhead.mp4'),
+  video: assetPath('/videos/drone-pool-to-overhead-hd.mp4'),
   poster: assetPath('/videos/drone-pool-to-overhead-poster.jpg'),
   finalFrame: assetPath('/videos/drone-pool-to-overhead-final.jpg'),
   posterAlt: 'Aerial view rising from the courtyard pool into a straight-down view of the Beyond60 grounds',

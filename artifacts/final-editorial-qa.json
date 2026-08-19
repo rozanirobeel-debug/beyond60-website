@@ -1,0 +1,456 @@
+{
+  "desktop": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "errors": [],
+    "overflow": 0,
+    "videoTimes": [
+      {
+        "time": 2.174586,
+        "duration": 15.553333,
+        "paused": true,
+        "src": "http://127.0.0.1:4180/beyond60-website/videos/drone-location-to-pool-hd.mp4"
+      },
+      {
+        "time": 7.776666,
+        "duration": 15.553333,
+        "paused": true,
+        "src": "http://127.0.0.1:4180/beyond60-website/videos/drone-location-to-pool-hd.mp4"
+      },
+      {
+        "time": 13.378746,
+        "duration": 15.553333,
+        "paused": true,
+        "src": "http://127.0.0.1:4180/beyond60-website/videos/drone-location-to-pool-hd.mp4"
+      }
+    ],
+    "mobileFallback": null,
+    "sections": {
+      ".care-section": [
+        {
+          "progress": 0.18,
+          "visible": [
+            {
+              "index": 0,
+              "opacity": 0.9987,
+              "rect": {
+                "left": 168.10000610351562,
+                "top": 178.86862182617188,
+                "right": 585.7355346679688,
+                "bottom": 418.89263916015625
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        },
+        {
+          "progress": 0.34,
+          "visible": [
+            {
+              "index": 2,
+              "opacity": 0.8673,
+              "rect": {
+                "left": 330.15777587890625,
+                "top": 551.3622436523438,
+                "right": 712.0657348632812,
+                "bottom": 788.4734497070312
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        },
+        {
+          "progress": 0.5,
+          "visible": [
+            {
+              "index": 3,
+              "opacity": 1,
+              "rect": {
+                "left": 638.40625,
+                "top": 545.375,
+                "right": 1128,
+                "bottom": 785.375
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        },
+        {
+          "progress": 0.66,
+          "visible": [
+            {
+              "index": 5,
+              "opacity": 0.1373,
+              "rect": {
+                "left": 307.2986145019531,
+                "top": 415.0374450683594,
+                "right": 724.2443237304688,
+                "bottom": 637.1802978515625
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        },
+        {
+          "progress": 0.82,
+          "visible": [
+            {
+              "index": 6,
+              "opacity": 1,
+              "rect": {
+                "left": 856.8125,
+                "top": 330.546875,
+                "right": 1260,
+                "bottom": 570.546875
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        }
+      ],
+      ".amenities-section": [
+        {
+          "progress": 0.18,
+          "visible": [
+            {
+              "index": 0,
+              "opacity": 1,
+              "rect": {
+                "left": 168,
+                "top": 236.875,
+                "right": 772.796875,
+                "bottom": 794.875
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        },
+        {
+          "progress": 0.34,
+          "visible": [
+            {
+              "index": 1,
+              "opacity": 0.9482,
+              "rect": {
+                "left": 827.2086791992188,
+                "top": 288.061767578125,
+                "right": 1231.242919921875,
+                "bottom": 675.8744506835938
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        },
+        {
+          "progress": 0.5,
+          "visible": [
+            {
+              "index": 3,
+              "opacity": 0.6287,
+              "rect": {
+                "left": 607.4158935546875,
+                "top": 368.834228515625,
+                "right": 1155.9871826171875,
+                "bottom": 800.8252563476562
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        },
+        {
+          "progress": 0.66,
+          "visible": [
+            {
+              "index": 4,
+              "opacity": 0.9986,
+              "rect": {
+                "left": 191.8724822998047,
+                "top": 300.7567138671875,
+                "right": 580.6201629638672,
+                "bottom": 768.6868896484375
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        },
+        {
+          "progress": 0.82,
+          "visible": [
+            {
+              "index": 5,
+              "opacity": 1,
+              "rect": {
+                "left": 638.40625,
+                "top": 230.390625,
+                "right": 1272,
+                "bottom": 806.390625
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        }
+      ]
+    }
+  },
+  "mobile": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "errors": [],
+    "overflow": 0,
+    "videoTimes": [],
+    "mobileFallback": {
+      "video": "none",
+      "fallback": "block"
+    },
+    "sections": {
+      ".care-section": [
+        {
+          "progress": 0.18,
+          "visible": [
+            {
+              "index": 0,
+              "opacity": 0.9984,
+              "rect": {
+                "left": 31.330230712890625,
+                "top": 326.0903015136719,
+                "right": 358.9567565917969,
+                "bottom": 548.1124877929688
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        },
+        {
+          "progress": 0.34,
+          "visible": [
+            {
+              "index": 2,
+              "opacity": 0.869,
+              "rect": {
+                "left": 24.851652145385742,
+                "top": 317.12060546875,
+                "right": 346.80334281921387,
+                "bottom": 536.288818359375
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        },
+        {
+          "progress": 0.5,
+          "visible": [
+            {
+              "index": 3,
+              "opacity": 1,
+              "rect": {
+                "left": 31.203125,
+                "top": 326.1875,
+                "right": 358.796875,
+                "bottom": 548.1875
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        },
+        {
+          "progress": 0.66,
+          "visible": [
+            {
+              "index": 5,
+              "opacity": 0.1303,
+              "rect": {
+                "left": 137.4320526123047,
+                "top": 397.22467041015625,
+                "right": 426.5051727294922,
+                "bottom": 598.9063110351562
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        },
+        {
+          "progress": 0.82,
+          "visible": [
+            {
+              "index": 6,
+              "opacity": 1,
+              "rect": {
+                "left": 31.203125,
+                "top": 326.1875,
+                "right": 358.796875,
+                "bottom": 548.1875
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        }
+      ],
+      ".amenities-section": [
+        {
+          "progress": 0.18,
+          "visible": [
+            {
+              "index": 0,
+              "opacity": 1,
+              "rect": {
+                "left": 31.203125,
+                "top": 231.59375,
+                "right": 358.796875,
+                "bottom": 704.21875
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        },
+        {
+          "progress": 0.34,
+          "visible": [
+            {
+              "index": 1,
+              "opacity": 0.9471,
+              "rect": {
+                "left": 25.57275390625,
+                "top": 228.24278259277344,
+                "right": 353.8544616699219,
+                "bottom": 701.8602752685547
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        },
+        {
+          "progress": 0.5,
+          "visible": [
+            {
+              "index": 3,
+              "opacity": 0.6287,
+              "rect": {
+                "left": 67.05364227294922,
+                "top": 213.4625701904297,
+                "right": 382.34935760498047,
+                "bottom": 662.9468841552734
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        },
+        {
+          "progress": 0.66,
+          "visible": [
+            {
+              "index": 4,
+              "opacity": 0.9986,
+              "rect": {
+                "left": 31.064434051513672,
+                "top": 231.7304229736328,
+                "right": 358.62238693237305,
+                "bottom": 704.2815093994141
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        },
+        {
+          "progress": 0.82,
+          "visible": [
+            {
+              "index": 5,
+              "opacity": 1,
+              "rect": {
+                "left": 31.203125,
+                "top": 231.59375,
+                "right": 358.796875,
+                "bottom": 704.21875
+              }
+            }
+          ],
+          "layers": {
+            "backdrop": 0,
+            "motif": 2,
+            "content": 3
+          }
+        }
+      ]
+    }
+  }
+}
