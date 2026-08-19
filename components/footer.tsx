@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { contact, siteConfig } from '@/lib/site-config'
+import { assetPath, contact, siteConfig } from '@/lib/site-config'
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -7,8 +7,7 @@ export function Footer() {
   return (
     <footer className="footer shell">
       <Link className="wordmark" href="/">
-        <span className="wordmark-dot" />
-        {siteConfig.brand}
+        <img className="wordmark-logo" src={assetPath('/images/logo.png')} alt={siteConfig.brand} />
       </Link>
       <div className="footer-contact">
         <p>{contact.address}</p>

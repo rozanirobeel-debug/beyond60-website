@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, Phone, X } from 'lucide-react'
-import { contact, siteConfig } from '@/lib/site-config'
+import { assetPath, contact, siteConfig } from '@/lib/site-config'
 
 const links = [
   { href: '/#care', label: 'Specialized Care' },
@@ -20,8 +20,7 @@ export function Nav() {
   return (
     <nav className="nav shell" aria-label="Main navigation">
       <Link className="wordmark" href="/" aria-label="Beyond60 home" onClick={() => setOpen(false)}>
-        <span className="wordmark-dot" />
-        {siteConfig.brand}
+        <img className="wordmark-logo" src={assetPath('/images/logo.png')} alt={siteConfig.brand} />
       </Link>
 
       <div className="nav-links" aria-label="Section navigation">
