@@ -1,19 +1,21 @@
 1:"$Sreact.fragment"
-2:I[772,["592","static/chunks/c15bf2b0-0b7ccb01d0221f08.js","159","static/chunks/159-47bc5936c328ba3b.js","974","static/chunks/app/page-e609cfebf588e6ef.js"],"Experience"]
+2:I[5882,["592","static/chunks/c15bf2b0-0b7ccb01d0221f08.js","500","static/chunks/500-b13bb91f5a6311b6.js","212","static/chunks/212-9f4438f0fff0d854.js","974","static/chunks/app/page-0aa611fe46d4e888.js"],"Experience"]
 3:I[484,[],"OutletBoundary"]
 4:"$Sreact.suspense"
 8:I[484,[],"ViewportBoundary"]
 9:I[484,[],"MetadataBoundary"]
-b:I[7121,[],""]
-c:I[4581,[],""]
-:HL["/beyond60-website/_next/static/css/bbb9554020a4acde.css","style"]
+a:I[6869,[],"IconMark"]
+c:I[7121,[],""]
+d:I[4581,[],""]
+e:I[8500,["500","static/chunks/500-b13bb91f5a6311b6.js","345","static/chunks/app/not-found-f0aa3d593af84859.js"],""]
+:HL["/_next/static/css/f61e19d77bdec23e.css","style"]
 7:X
-0:{"buildId":"uFcORLWrzmjZ3oCuAgIQG","data":[{"rsc":["$","$1","c",{"children":[["$","$L2",null,{}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":"$@6","staleTime":"$7","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$L8",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L9",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Beyond60 Seniors Care | Prototype"}],["$","meta","1",{"name":"description","content":"Senior assisted living near Manor, Palghar — website prototype, not the live site."}]]}]}]}],null]}],"isPartial":"$@a","staleTime":"$7","varyParams":null},{"rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/beyond60-website/_next/static/css/bbb9554020a4acde.css","precedence":"next"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$Lb",null,{"parallelRouterKey":"children","template":["$","$Lc",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]]}]}]}]]}],"isPartial":"$@d","staleTime":"$7","varyParams":null}],"isUpgradeableISRFallback":false,"a":"$@e","rootVaryParams":null,"needsRuntimeRequest":"$@f"}
+0:{"buildId":"A-fYKULhg685qjGQtc2hc","data":[{"rsc":["$","$1","c",{"children":[["$","$L2",null,{}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":"$@6","staleTime":"$7","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$L8",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L9",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Beyond60 Seniors Care | Assisted Living in Manor, Palghar"}],["$","meta","1",{"name":"description","content":"Wholesome senior assisted living, specialized care and recovery support in a calm residential setting near Manor, Palghar."}],["$","link","2",{"rel":"icon","href":"/images/logo.png"}],["$","link","3",{"rel":"apple-touch-icon","href":"/images/logo.png"}],["$","$La","4",{}]]}]}]}],null]}],"isPartial":"$@b","staleTime":"$7","varyParams":null},{"rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f61e19d77bdec23e.css","precedence":"next"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$Lc",null,{"parallelRouterKey":"children","template":["$","$Ld",null,{}],"notFound":[["$","main",null,{"className":"not-found","children":["$","div",null,{"children":[["$","h1",null,{"children":"404"}],["$","h2",null,{"children":"This page has wandered off."}],["$","p",null,{"children":"Let’s take you back to Beyond60."}],["$","$Le",null,{"href":"/","children":"Return home","className":"button button-gold button-default","ref":null}]]}]}],[]]}]}]}]]}],"isPartial":"$@f","staleTime":"$7","varyParams":null}],"isUpgradeableISRFallback":false,"a":"$@10","rootVaryParams":null,"needsRuntimeRequest":"$@11"}
 5:null
 7:300
-f:true
+11:true
 7:C
-e:0
-a:"$undefined"
-d:"$undefined"
+10:0
+b:"$undefined"
+f:"$undefined"
 6:"$undefined"
