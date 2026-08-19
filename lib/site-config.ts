@@ -41,17 +41,20 @@ export const hero = {
   imageAlt: 'Smiling senior resident at Beyond60, wrapped in a white dupatta with festival colour on her cheek',
 }
 
-// Section 3 — location & reassurance
+// Section 3 — location & reassurance (scroll-scrubbed drone descent)
 export const location = {
   eyebrow: 'Peace of mind, simply stated',
   line: 'A calm, residential setting — with an on-call ambulance and trained staff, always within reach.',
-  video: assetPath('/story/pool-ambulance.mp4'),
-  poster: assetPath('/story/pool-ambulance-poster.jpg'),
-  posterAlt: 'Beyond60 residence courtyard and pool, viewed at ground level',
+  video: assetPath('/videos/drone-location-to-pool.mp4'),
+  poster: assetPath('/videos/drone-location-to-pool-poster.jpg'),
+  finalFrame: assetPath('/videos/drone-location-to-pool-final.jpg'),
+  posterAlt: 'Aerial approach over the Beyond60 property, descending toward the courtyard pool',
 }
 
-// Section 4 — specialized care
+// Section 4 — specialized care (backdrop = frozen final frame of the location descent)
 export const specializedCare = {
+  backdrop: location.finalFrame,
+  backdropAlt: 'Beyond60 courtyard pool, viewed at ground level',
   intro: 'Specialized care, for every stage of need.',
   closing:
     'Every resident is personally assessed before admission — we visit them at their current home first to confirm we can genuinely provide the right level of care. If we’re not certain we can, we say so, and decline respectfully rather than take on more than we can deliver.',
@@ -66,7 +69,20 @@ export const specializedCare = {
   ],
 }
 
-// Section 5 — amenities scroll-through
+// Section 4.5 — scenic transition (scroll-scrubbed drone rise, continues seamlessly from the location descent's final frame)
+export const scenic = {
+  video: assetPath('/videos/drone-pool-to-overhead.mp4'),
+  poster: assetPath('/videos/drone-pool-to-overhead-poster.jpg'),
+  finalFrame: assetPath('/videos/drone-pool-to-overhead-final.jpg'),
+  posterAlt: 'Aerial view rising from the courtyard pool into a straight-down view of the Beyond60 grounds',
+}
+
+// Section 5 — amenities scroll-through (backdrop = frozen final frame of the scenic rise)
+export const amenitiesBackdrop = {
+  image: scenic.finalFrame,
+  alt: 'Overhead view of the Beyond60 courtyard and pool',
+}
+
 export const amenities = [
   {
     title: 'Dining',
